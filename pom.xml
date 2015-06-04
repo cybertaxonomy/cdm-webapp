@@ -19,6 +19,14 @@
     <repository>
       <id>EditRepository</id>
       <url>http://wp5.e-taxonomy.eu/mavenrepo/</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
     </repository>
   </repositories>
   <distributionManagement>
