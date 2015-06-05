@@ -88,14 +88,29 @@
           <webResources>
             <resource>
               <!-- this is relative to the pom.xml directory -->
-              <directory>${project.build.directory}/cdm-vaadin</directory>
+              <directory>${project.build.directory}/dependency/cdm-vaadin</directory>
             </resource>
             <resource>
               <!-- this is relative to the pom.xml directory -->
-              <directory>${project.build.directory}/cdmlib-remote-webapp</directory>
+              <directory>${project.build.directory}/dependency/cdmlib-remote-webapp</directory>
             </resource>
           </webResources>
         </configuration>
+      </plugin>
+      <plugin>
+        <!-- always clean up before doing anything, else files will accumulate -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>auto-clean</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -116,7 +131,7 @@
                   <version>${cdm.vaadin.version}</version>
                   <type>war</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${project.build.directory}/cdm-vaadin</outputDirectory>
+                  <outputDirectory>${project.build.directory}/dependency/cdm-vaadin</outputDirectory>
                   <excludes>META-INF/**</excludes>
                 </artifactItem>
                 <artifactItem>
@@ -125,7 +140,7 @@
                   <version>${cdmlib.remote.webapp.version}</version>
                   <type>war</type>
                   <overWrite>true</overWrite>
-                  <outputDirectory>${project.build.directory}/cdmlib-remote-webapp</outputDirectory>
+                  <outputDirectory>${project.build.directory}/dependency/cdmlib-remote-webapp</outputDirectory>
                 </artifactItem>
               </artifactItems>
               <overWriteReleases>false</overWriteReleases>
