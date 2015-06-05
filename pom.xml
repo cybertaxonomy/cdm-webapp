@@ -63,18 +63,20 @@
     </profile>
   </profiles>
 
-  <!-- <dependencies> -->
-  <!-- <dependency> -->
-  <!-- <groupId>eu.etaxonomy</groupId> -->
-  <!-- <artifactId>cdmlib-remote-webapp</artifactId> -->
-  <!-- <version>${cdmlib.remote.webapp.version}</version> -->
-  <!-- </dependency> -->
-  <!-- <dependency> -->
-  <!-- <groupId>eu.etaxonomy</groupId> -->
-  <!-- <artifactId>cdm-vaadin</artifactId> -->
-  <!-- <version>${cdm.vaadin.version}</version> -->
-  <!-- </dependency> -->
-  <!-- </dependencies> -->
+  <dependencies> 
+    <dependency> 
+      <groupId>eu.etaxonomy</groupId> 
+      <artifactId>cdmlib-remote-webapp</artifactId>
+      <version>${cdmlib.remote.webapp.version}</version> 
+      <type>war</type>
+    </dependency>
+    <dependency> 
+      <groupId>eu.etaxonomy</groupId> 
+      <artifactId>cdm-vaadin</artifactId> 
+      <version>${cdm.vaadin.version}</version> 
+      <type>war</type>
+    </dependency> 
+  </dependencies> 
 
   <build>
     <plugins>
@@ -95,7 +97,6 @@
           </webResources>
         </configuration>
       </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
