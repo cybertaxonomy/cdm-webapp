@@ -9,8 +9,8 @@
   <name>CDM Webapp</name>
 
   <properties>
-    <cdmlib.remote.webapp.version>3.6.2-SNAPSHOT</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.6.2-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.6.2</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.6.2</cdm.vaadin.version>
   </properties>
 
   <repositories>
