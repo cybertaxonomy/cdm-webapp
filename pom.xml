@@ -9,8 +9,8 @@
   <name>CDM Webapp</name>
 
   <properties>
-    <cdmlib.remote.webapp.version>3.6.2-SNAPSHOT</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.6.2-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.6.2</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.6.2</cdm.vaadin.version>
   </properties>
 
   <repositories>
@@ -96,8 +96,18 @@
           </webResources>
         </configuration>
       </plugin>
+        <!-- 
+        
+        when executing the mvn deploy directly (not via jgit-flow *-finish) unpacked war
+        resources are accumulating and must be deleted before entering the prepare-package
+        life cycle phase, therefore configuring this auto-clean makes a lot of sense.
+        
+        BUT the auto-clean is causing problems with the jgit-flow plugin,
+        it is called twice and thus removes the cdm-webapp-x.x.x.war after it has been build,
+        maven then fails with : "The packaging for this project did not assign a file to the build artifact"
+        Therefore this is disabled! 
+        
       <plugin>
-        <!-- always clean up before doing anything, else files will accumulate -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <version>2.5</version>
@@ -111,6 +121,7 @@
           </execution>
         </executions>
       </plugin>
+        -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
