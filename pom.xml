@@ -96,8 +96,14 @@
           </webResources>
         </configuration>
       </plugin>
+        <!-- always clean up before doing anything, else files will accumulate 
       <plugin>
-        <!-- always clean up before doing anything, else files will accumulate -->
+        
+        the auto-clean is causing problems with the jgit-flow plugin,
+        it is called twice and thus removes the cdm-webapp-x.x.x.war after it has been build,
+        maven then failes with : "The packaging for this project did not assign a file to the build artifact"
+        
+        
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
         <version>2.5</version>
@@ -111,6 +117,7 @@
           </execution>
         </executions>
       </plugin>
+        -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
