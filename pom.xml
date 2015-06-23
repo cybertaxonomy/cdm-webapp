@@ -107,6 +107,11 @@
         maven then fails with : "The packaging for this project did not assign a file to the build artifact"
         Therefore this is disabled! 
         
+        A possible solution to this is to bind define a special auto-clean execution to the prepare-package phase,
+        as long as this plugin is defined before the maven-dependency-plugin the clean should only
+        happen before the unpack, see http://www.mkyong.com/maven/maven-plugin-execution-order-in-same-phase/
+        Maybe it makes sense to define a fileset that only includes the unpacked war files  
+        
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
