@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>3.6.2</version>
+  <version>3.7.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
-
   <properties>
-    <cdmlib.remote.webapp.version>3.6.2</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.6.2</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.7.0</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.7.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
-
   <repositories>
     <!-- the cdm internal repository -->
     <repository>
@@ -61,22 +58,20 @@
       </repositories>
     </profile>
   </profiles>
-
-  <dependencies> 
-    <dependency> 
-      <groupId>eu.etaxonomy</groupId> 
+  <dependencies>
+    <dependency>
+      <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-remote-webapp</artifactId>
-      <version>${cdmlib.remote.webapp.version}</version> 
+      <version>${cdmlib.remote.webapp.version}</version>
       <type>war</type>
     </dependency>
-    <dependency> 
-      <groupId>eu.etaxonomy</groupId> 
-      <artifactId>cdm-vaadin</artifactId> 
-      <version>${cdm.vaadin.version}</version> 
+    <dependency>
+      <groupId>eu.etaxonomy</groupId>
+      <artifactId>cdm-vaadin</artifactId>
+      <version>${cdm.vaadin.version}</version>
       <type>war</type>
-    </dependency> 
-  </dependencies> 
-
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -96,7 +91,7 @@
           </webResources>
         </configuration>
       </plugin>
-        <!-- 
+      <!-- 
         
         when executing the mvn deploy directly (not via jgit-flow *-finish) unpacked war
         resources are accumulating and must be deleted before entering the prepare-package
@@ -106,6 +101,11 @@
         it is called twice and thus removes the cdm-webapp-x.x.x.war after it has been build,
         maven then fails with : "The packaging for this project did not assign a file to the build artifact"
         Therefore this is disabled! 
+        
+        A possible solution to this is to bind define a special auto-clean execution to the prepare-package phase,
+        as long as this plugin is defined before the maven-dependency-plugin the clean should only
+        happen before the unpack, see http://www.mkyong.com/maven/maven-plugin-execution-order-in-same-phase/
+        Maybe it makes sense to define a fileset that only includes the unpacked war files  
         
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -159,13 +159,13 @@
           </execution>
         </executions>
       </plugin>
-        <plugin>
+      <plugin>
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
-        <version>1.0-m5.1</version>
+        <version>1.0-m6</version>
         <configuration>
           <pushHotfixes>true</pushHotfixes>
-          <!-- <pushReleases>true</pushReleases> -->
+          <pushReleases>true</pushReleases>
           <enableSshAgent>true</enableSshAgent>
           <allowSnapshots>true</allowSnapshots>
           <allowUntracked>true</allowUntracked>
@@ -183,7 +183,7 @@
         </dependencies>
       </plugin>
     </plugins>
-        <extensions>
+    <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-scm</artifactId>
