@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>3.6.3-SNAPSHOT</version>
+  <version>3.7.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
 
   <properties>
-    <cdmlib.remote.webapp.version>3.6.3-SNAPSHOT</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.6.3-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.7.0-SNAPSHOT</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.7.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
 
   <repositories>
@@ -167,10 +167,10 @@
         <plugin>
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
-        <version>1.0-m5.1</version>
+        <version>1.0-m6</version>
         <configuration>
           <pushHotfixes>true</pushHotfixes>
-          <!-- <pushReleases>true</pushReleases> -->
+          <pushReleases>true</pushReleases>
           <enableSshAgent>true</enableSshAgent>
           <allowSnapshots>true</allowSnapshots>
           <allowUntracked>true</allowUntracked>
