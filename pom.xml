@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
   <version>3.7.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
-
   <properties>
     <cdmlib.remote.webapp.version>3.7.0-SNAPSHOT</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.7.0-SNAPSHOT</cdm.vaadin.version>
+    <cdm.vaadin.version>3.8.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
-
   <repositories>
     <!-- the cdm internal repository -->
     <repository>
@@ -61,22 +58,20 @@
       </repositories>
     </profile>
   </profiles>
-
-  <dependencies> 
-    <dependency> 
-      <groupId>eu.etaxonomy</groupId> 
+  <dependencies>
+    <dependency>
+      <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-remote-webapp</artifactId>
-      <version>${cdmlib.remote.webapp.version}</version> 
+      <version>${cdmlib.remote.webapp.version}</version>
       <type>war</type>
     </dependency>
-    <dependency> 
-      <groupId>eu.etaxonomy</groupId> 
-      <artifactId>cdm-vaadin</artifactId> 
-      <version>${cdm.vaadin.version}</version> 
+    <dependency>
+      <groupId>eu.etaxonomy</groupId>
+      <artifactId>cdm-vaadin</artifactId>
+      <version>${cdm.vaadin.version}</version>
       <type>war</type>
-    </dependency> 
-  </dependencies> 
-
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -96,7 +91,7 @@
           </webResources>
         </configuration>
       </plugin>
-        <!-- 
+      <!-- 
         
         when executing the mvn deploy directly (not via jgit-flow *-finish) unpacked war
         resources are accumulating and must be deleted before entering the prepare-package
@@ -164,7 +159,7 @@
           </execution>
         </executions>
       </plugin>
-        <plugin>
+      <plugin>
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
         <version>1.0-m6</version>
@@ -188,7 +183,7 @@
         </dependencies>
       </plugin>
     </plugins>
-        <extensions>
+    <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-scm</artifactId>
