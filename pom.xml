@@ -7,8 +7,8 @@
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.remote.webapp.version>3.8.0</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.8.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.10.0-SNAPSHOT</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.10.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
