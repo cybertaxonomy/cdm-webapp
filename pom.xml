@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>3.10.0</version>
+  <version>3.11.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.remote.webapp.version>3.10.0</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.10.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.remote.webapp.version>3.11.0</cdmlib.remote.webapp.version>
+    <cdm.vaadin.version>3.11.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
