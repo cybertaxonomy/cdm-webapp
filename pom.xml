@@ -7,8 +7,8 @@
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.remote.webapp.version>3.11.0</cdmlib.remote.webapp.version>
-    <cdm.vaadin.version>3.11.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.version>3.12.0-SNAPSHOT</cdmlib.version>
+    <cdm.vaadin.version>3.12.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -62,7 +62,7 @@
     <dependency>
       <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-remote-webapp</artifactId>
-      <version>${cdmlib.remote.webapp.version}</version>
+      <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
@@ -147,7 +147,7 @@
                 <artifactItem>
                   <groupId>eu.etaxonomy</groupId>
                   <artifactId>cdmlib-remote-webapp</artifactId>
-                  <version>${cdmlib.remote.webapp.version}</version>
+                  <version>${cdmlib.version}</version>
                   <type>war</type>
                   <overWrite>true</overWrite>
                   <outputDirectory>${project.build.directory}/dependency/cdmlib-remote-webapp</outputDirectory>
