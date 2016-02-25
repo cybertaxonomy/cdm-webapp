@@ -142,7 +142,7 @@
                   <type>war</type>
                   <overWrite>true</overWrite>
                   <outputDirectory>${project.build.directory}/dependency/cdm-vaadin</outputDirectory>
-                  <excludes>META-INF/**</excludes>
+                  <excludes>META-INF/**,WEB-INF/classes/log4j.properties</excludes>
                 </artifactItem>
                 <artifactItem>
                   <groupId>eu.etaxonomy</groupId>
