@@ -61,15 +61,21 @@
   <dependencies>
     <dependency>
       <groupId>eu.etaxonomy</groupId>
+      <artifactId>cdm-vaadin</artifactId>
+      <version>${cdm.vaadin.version}</version>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-remote-webapp</artifactId>
       <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>eu.etaxonomy</groupId>
-      <artifactId>cdm-vaadin</artifactId>
-      <version>${cdm.vaadin.version}</version>
-      <type>war</type>
+      <artifactId>cdmlib-db</artifactId>
+      <version>${cdmlib.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -79,16 +85,21 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.6</version>
         <configuration>
-          <webResources>
-            <resource>
-              <!-- this is relative to the pom.xml directory -->
-              <directory>${project.build.directory}/dependency/cdm-vaadin</directory>
-            </resource>
-            <resource>
-              <!-- this is relative to the pom.xml directory -->
-              <directory>${project.build.directory}/dependency/cdmlib-remote-webapp</directory>
-            </resource>
-          </webResources>
+          <failOnMissingWebXml>flase</failOnMissingWebXml>
+          <overlays>
+            <!-- 
+                Overlays are applied with a first-win strategy. 
+                Overlays are applied in the order in which they are defined in the <overlays> configuration. 
+            -->
+            <overlay>
+              <groupId>eu.etaxonomy</groupId>
+              <artifactId>cdm-vaadin</artifactId>
+            </overlay>
+            <overlay>
+              <groupId>eu.etaxonomy</groupId>
+              <artifactId>cdmlib-remote-webapp</artifactId>
+            </overlay>
+          </overlays>
         </configuration>
       </plugin>
       <!-- 
@@ -122,6 +133,7 @@
         </executions>
       </plugin>
         -->
+        <!-- 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -159,6 +171,7 @@
           </execution>
         </executions>
       </plugin>
+       -->
       <plugin>
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
