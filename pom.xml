@@ -61,14 +61,14 @@
   <dependencies>
     <dependency>
       <groupId>eu.etaxonomy</groupId>
-      <artifactId>cdm-vaadin</artifactId>
-      <version>${cdm.vaadin.version}</version>
+      <artifactId>cdmlib-remote-webapp</artifactId>
+      <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
       <groupId>eu.etaxonomy</groupId>
-      <artifactId>cdmlib-remote-webapp</artifactId>
-      <version>${cdmlib.version}</version>
+      <artifactId>cdm-vaadin</artifactId>
+      <version>${cdm.vaadin.version}</version>
       <type>war</type>
     </dependency>
     <dependency>
@@ -90,14 +90,22 @@
             <!-- 
                 Overlays are applied with a first-win strategy. 
                 Overlays are applied in the order in which they are defined in the <overlays> configuration. 
+                
+                Therefore cdmlib-remote-webapp MUST COME FIRST!!
+                
+                Once a change is made to any cdmlib-* project cdmlib sould be build and the  
+                cdmlib-remote-webapp.war will contain all these fresh artifacts. cdm-vaadin 
+                in contrast is expected to be build only due to changes in the vaadin specific 
+                code.   
             -->
             <overlay>
+              <!-- MUST BE THE FIRST war, see above -->             
               <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdm-vaadin</artifactId>
+              <artifactId>cdmlib-remote-webapp</artifactId>
             </overlay>
             <overlay>
               <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdmlib-remote-webapp</artifactId>
+              <artifactId>cdm-vaadin</artifactId>
             </overlay>
           </overlays>
         </configuration>
