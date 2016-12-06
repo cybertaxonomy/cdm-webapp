@@ -7,7 +7,7 @@
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>4.4.0</cdmlib.version>
+    <cdmlib.version>4.4.1</cdmlib.version>
     <cdm.vaadin.version>4.4.0</cdm.vaadin.version>
   </properties>
   <repositories>
