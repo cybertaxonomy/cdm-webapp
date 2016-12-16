@@ -90,13 +90,14 @@
             <!-- 
                 Overlays are applied with a first-win strategy. 
                 Overlays are applied in the order in which they are defined in the <overlays> configuration. 
+                Therefore cdmlib-remote-webapp should come first.
                 
-                Therefore cdmlib-remote-webapp MUST COME FIRST!!
-                
-                Once a change is made to any cdmlib-* project cdmlib sould be build and the  
+                Once a change is made to any cdmlib-* project cdmlib should be build and the  
                 cdmlib-remote-webapp.war will contain all these fresh artifacts. cdm-vaadin 
                 in contrast is expected to be build only due to changes in the vaadin specific 
-                code.   
+                code. The cdmlib-* artifact are excluded from the cdm-vaadin overlay to assure 
+                that only the cdmlib-jars from cdm-remote-webapp can make their way into the final
+                war.    
             -->
             <overlay>
               <!-- MUST BE THE FIRST war, see above -->
@@ -106,6 +107,9 @@
             <overlay>
               <groupId>eu.etaxonomy</groupId>
               <artifactId>cdm-vaadin</artifactId>
+              <excludes>
+                <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>
+              </excludes>
             </overlay>
           </overlays>
         </configuration>
