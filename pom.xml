@@ -110,6 +110,9 @@
               <excludes>
                 <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>
               </excludes>
+              <includes>
+                <include>WEB-INF/lib/cdmlib-cache.jar</include>
+              </includes>
             </overlay>
           </overlays>
         </configuration>
