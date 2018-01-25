@@ -110,8 +110,13 @@
               <excludes>
                 <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>
               </excludes>
+            </overlay>
+            <overlay>
+              <!-- overlay a second time to only add cdmlib-cache.jar -->
+              <groupId>eu.etaxonomy</groupId>
+              <artifactId>cdm-vaadin</artifactId>
               <includes>
-                <include>WEB-INF/lib/cdmlib-cache.jar</include>
+                <include>WEB-INF/lib/cdmlib-cache*.jar</include>
               </includes>
             </overlay>
           </overlays>
