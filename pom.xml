@@ -14,7 +14,7 @@
     <!-- the cdm internal repository -->
     <repository>
       <id>EditRepository</id>
-      <url>http://wp5.e-taxonomy.eu/mavenrepo/</url>
+      <url>http://cybertaxonomy.eu/mavenrepo</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>always</updatePolicy>
@@ -28,9 +28,9 @@
   <distributionManagement>
     <repository>
       <uniqueVersion>false</uniqueVersion>
-      <id>wp5.e-taxonomy.eu</id>
+      <id>cybertaxonomy.eu</id>
       <name>Edit Maven Repository</name>
-      <url>scpexe://wp5.e-taxonomy.eu/var/www/wp5.e-taxonomy.eu/mavenrepo/</url>
+      <url>scpexe://cybertaxonomy.eu/var/www/wp5.e-taxonomy.eu/mavenrepo/</url>
       <layout>default</layout>
     </repository>
   </distributionManagement>
