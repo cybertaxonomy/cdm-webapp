@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>5.14.0</version>
+  <version>5.15.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.14.0</cdmlib.version>
-    <cdm.vaadin.version>5.14.0</cdm.vaadin.version>
+    <cdmlib.version>5.15.0</cdmlib.version>
+    <cdm.vaadin.version>5.15.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -175,6 +175,36 @@
             <version>0.1.53</version>
           </dependency>
         </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <executions>
+          <execution>
+            <id>enforce</id>
+            <configuration>
+              <fail>true</fail>
+              <skip>false</skip>
+              <rules>
+                <dependencyConvergence />
+                <requireMavenVersion>
+                  <version>[3.6.0,)</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
+            <goals>
+              <goal>enforce</goal>
+            
+            
+            
+            
+            
+            
+              <!-- Binds by default to the lifecycle phase: validate -->
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <extensions>
