@@ -3,18 +3,18 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>5.28.0</version>
+  <version>5.29.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.28.0</cdmlib.version>
-    <cdm.vaadin.version>5.28.0</cdm.vaadin.version>
+    <cdmlib.version>5.29.0</cdmlib.version>
+    <cdm.vaadin.version>5.29.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
     <repository>
       <id>EditRepository</id>
-      <url>http://cybertaxonomy.eu/mavenrepo</url>
+      <url>https://cybertaxonomy.eu/mavenrepo</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>always</updatePolicy>
@@ -83,7 +83,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.3.2</version>
         <configuration>
           <failOnMissingWebXml>flase</failOnMissingWebXml>
           <overlays>
@@ -154,6 +154,9 @@
       </plugin>
         -->
       <plugin>
+        <!-- groupId>ch.dvbern.oss.maven.jgitflow</groupId>
+        <artifactId>jgitflow-maven-plugin</artifactId>
+        <version>1.0-m8</version>  -->
         <groupId>external.atlassian.jgitflow</groupId>
         <artifactId>jgitflow-maven-plugin</artifactId>
         <version>1.0-m6</version>
@@ -172,14 +175,14 @@
           <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
-            <version>0.1.53</version>
+            <version>0.1.55</version>
           </dependency>
         </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M2</version>
+        <version>3.0.0</version>
         <executions>
           <execution>
             <id>enforce</id>
@@ -203,32 +206,7 @@
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+          
               <!-- Binds by default to the lifecycle phase: validate -->
             </goals>
           </execution>
@@ -239,17 +217,17 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-scm</artifactId>
-        <version>2.10</version>
+        <version>3.5.1</version>
       </extension>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ssh</artifactId>
-        <version>2.10</version>
+        <version>3.5.1</version>
       </extension>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ssh-external</artifactId>
-        <version>2.10</version>
+        <version>3.5.1</version>
       </extension>
     </extensions>
   </build>
