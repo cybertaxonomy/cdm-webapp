@@ -3,18 +3,18 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>5.29.0</version>
+  <version>5.30.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.29.0</cdmlib.version>
-    <cdm.vaadin.version>5.29.0</cdm.vaadin.version>
+    <cdmlib.version>5.30.0</cdmlib.version>
+    <cdm.vaadin.version>5.30.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
     <repository>
       <id>EditRepository</id>
-      <url>https://cybertaxonomy.eu/mavenrepo</url>
+      <url>https://cybertaxonomy.org/mavenrepo</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>always</updatePolicy>
@@ -30,7 +30,7 @@
       <uniqueVersion>false</uniqueVersion>
       <id>cybertaxonomy.eu</id>
       <name>Edit Maven Repository</name>
-      <url>scpexe://cybertaxonomy.eu/var/www/wp5.e-taxonomy.eu/mavenrepo/</url>
+      <url>scpexe://cybertaxonomy.org/var/www/wp5.e-taxonomy.eu/mavenrepo/</url>
       <layout>default</layout>
     </repository>
   </distributionManagement>
@@ -198,6 +198,8 @@
             </configuration>
             <goals>
               <goal>enforce</goal>
+            
+            
             
             
             
