@@ -7,8 +7,8 @@
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.53.0-SNAPSHOT</cdmlib.version>
-    <cdm.vaadin.version>5.53.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.version>5.52.0-SNAPSHOT</cdmlib.version>
+    <cdm.vaadin.version>5.52.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -190,7 +190,7 @@
               <fail>true</fail>
               <skip>false</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
                 <requireMavenVersion>
                   <version>[3.6.0,)</version>
                 </requireMavenVersion>
@@ -198,6 +198,8 @@
             </configuration>
             <goals>
               <goal>enforce</goal>
+            
+            
             
             
             
