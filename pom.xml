@@ -190,7 +190,7 @@
               <fail>true</fail>
               <skip>false</skip>
               <rules>
-                <dependencyConvergence/>
+                <dependencyConvergence />
                 <requireMavenVersion>
                   <version>[3.6.0,)</version>
                 </requireMavenVersion>
