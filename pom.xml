@@ -188,6 +188,8 @@
               <goal>enforce</goal>
             
             
+            
+            
               <!-- Binds by default to the lifecycle phase: validate -->
             </goals>
           </execution>
