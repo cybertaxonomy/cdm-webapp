@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>5.55.0-SNAPSHOT</version>
+  <version>5.55.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.56.0-SNAPSHOT</cdmlib.version>
-    <cdm.vaadin.version>5.56.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.version>5.55.0</cdmlib.version>
+    <cdm.vaadin.version>5.55.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -153,7 +153,7 @@
         </executions>
       </plugin>
         -->
-       <plugin>
+      <plugin>
         <groupId>com.amashchenko.maven.plugin</groupId>
         <artifactId>gitflow-maven-plugin</artifactId>
         <version>1.21.0</version>
@@ -188,7 +188,12 @@
               <goal>enforce</goal>
             
             
-     
+            
+            
+            
+            
+            
+            
               <!-- Binds by default to the lifecycle phase: validate -->
             </goals>
           </execution>
