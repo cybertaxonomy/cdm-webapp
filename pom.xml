@@ -65,12 +65,12 @@
       <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
-    <dependency>
-      <groupId>eu.etaxonomy</groupId>
-      <artifactId>cdm-vaadin</artifactId>
-      <version>${cdm.vaadin.version}</version>
-      <type>war</type>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>eu.etaxonomy</groupId>-->
+<!--      <artifactId>cdm-vaadin</artifactId>-->
+<!--      <version>${cdm.vaadin.version}</version>-->
+<!--      <type>war</type>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-db</artifactId>
@@ -104,21 +104,21 @@
               <groupId>eu.etaxonomy</groupId>
               <artifactId>cdmlib-remote-webapp</artifactId>
             </overlay>
-            <overlay>
-              <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdm-vaadin</artifactId>
-              <excludes>
-                <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>
-              </excludes>
-            </overlay>
-            <overlay>
-              <!-- overlay a second time to only add cdmlib-cache.jar -->
-              <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdm-vaadin</artifactId>
-              <includes>
-                <include>WEB-INF/lib/cdmlib-cache*.jar</include>
-              </includes>
-            </overlay>
+<!--            <overlay>-->
+<!--              <groupId>eu.etaxonomy</groupId>-->
+<!--              <artifactId>cdm-vaadin</artifactId>-->
+<!--              <excludes>-->
+<!--                <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>-->
+<!--              </excludes>-->
+<!--            </overlay>-->
+<!--            <overlay>-->
+<!--               overlay a second time to only add cdmlib-cache.jar -->
+<!--              <groupId>eu.etaxonomy</groupId>-->
+<!--              <artifactId>cdm-vaadin</artifactId>-->
+<!--              <includes>-->
+<!--                <include>WEB-INF/lib/cdmlib-cache*.jar</include>-->
+<!--              </includes>-->
+<!--            </overlay>-->
           </overlays>
         </configuration>
       </plugin>
