@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>5.59.0</version>
+  <version>6.0.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>5.59.0</cdmlib.version>
-    <cdm.vaadin.version>5.59.0</cdm.vaadin.version>
+    <cdmlib.version>6.0.0</cdmlib.version>
+    <cdm.vaadin.version>6.0.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -65,12 +65,12 @@
       <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
-    <dependency>
-      <groupId>eu.etaxonomy</groupId>
-      <artifactId>cdm-vaadin</artifactId>
-      <version>${cdm.vaadin.version}</version>
-      <type>war</type>
-    </dependency>
+    <!--    <dependency>-->
+<!--      <groupId>eu.etaxonomy</groupId>-->
+<!--      <artifactId>cdm-vaadin</artifactId>-->
+<!--      <version>${cdm.vaadin.version}</version>-->
+<!--      <type>war</type>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>eu.etaxonomy</groupId>
       <artifactId>cdmlib-db</artifactId>
@@ -104,21 +104,23 @@
               <groupId>eu.etaxonomy</groupId>
               <artifactId>cdmlib-remote-webapp</artifactId>
             </overlay>
-            <overlay>
-              <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdm-vaadin</artifactId>
-              <excludes>
-                <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>
-              </excludes>
-            </overlay>
-            <overlay>
-              <!-- overlay a second time to only add cdmlib-cache.jar -->
-              <groupId>eu.etaxonomy</groupId>
-              <artifactId>cdm-vaadin</artifactId>
-              <includes>
-                <include>WEB-INF/lib/cdmlib-cache*.jar</include>
-              </includes>
-            </overlay>
+          
+          
+<!--            <overlay>-->
+<!--              <groupId>eu.etaxonomy</groupId>-->
+<!--              <artifactId>cdm-vaadin</artifactId>-->
+<!--              <excludes>-->
+<!--                <exclude>WEB-INF/lib/cdmlib-*.jar</exclude>-->
+<!--              </excludes>-->
+<!--            </overlay>-->
+<!--            <overlay>-->
+<!--               overlay a second time to only add cdmlib-cache.jar -->
+<!--              <groupId>eu.etaxonomy</groupId>-->
+<!--              <artifactId>cdm-vaadin</artifactId>-->
+<!--              <includes>-->
+<!--                <include>WEB-INF/lib/cdmlib-cache*.jar</include>-->
+<!--              </includes>-->
+<!--            </overlay>-->
           </overlays>
         </configuration>
       </plugin>
@@ -170,42 +172,21 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.6.3</version>
         <executions>
           <execution>
             <id>enforce</id>
             <configuration>
-              <fail>true</fail>
-              <skip>false</skip>
               <rules>
                 <dependencyConvergence/>
                 <requireMavenVersion>
-                  <version>[3.6.0,)</version>
+                  <version>[3.6.3,)</version>
+                  <message>You need at least maven 3.6.3 for this project!</message>
                 </requireMavenVersion>
               </rules>
             </configuration>
             <goals>
               <goal>enforce</goal>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
             
               <!-- Binds by default to the lifecycle phase: validate -->
