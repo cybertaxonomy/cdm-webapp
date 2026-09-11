@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>cdm-webapp</artifactId>
   <groupId>eu.etaxonomy</groupId>
-  <version>6.0.0-SNAPSHOT</version>
+  <version>6.0.0</version>
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>6.0.0-SNAPSHOT</cdmlib.version>
-    <cdm.vaadin.version>6.0.0-SNAPSHOT</cdm.vaadin.version>
+    <cdmlib.version>6.0.0</cdmlib.version>
+    <cdm.vaadin.version>6.0.0</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -65,7 +65,7 @@
       <version>${cdmlib.version}</version>
       <type>war</type>
     </dependency>
-<!--    <dependency>-->
+    <!--    <dependency>-->
 <!--      <groupId>eu.etaxonomy</groupId>-->
 <!--      <artifactId>cdm-vaadin</artifactId>-->
 <!--      <version>${cdm.vaadin.version}</version>-->
@@ -104,6 +104,8 @@
               <groupId>eu.etaxonomy</groupId>
               <artifactId>cdmlib-remote-webapp</artifactId>
             </overlay>
+          
+          
 <!--            <overlay>-->
 <!--              <groupId>eu.etaxonomy</groupId>-->
 <!--              <artifactId>cdm-vaadin</artifactId>-->
@@ -185,6 +187,8 @@
             </configuration>
             <goals>
               <goal>enforce</goal>
+            
+            
               <!-- Binds by default to the lifecycle phase: validate -->
             </goals>
           </execution>
