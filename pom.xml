@@ -7,8 +7,8 @@
   <packaging>war</packaging>
   <name>CDM Webapp</name>
   <properties>
-    <cdmlib.version>6.2.0</cdmlib.version>
-    <cdm.vaadin.version>6.2.0</cdm.vaadin.version>
+    <cdmlib.version>6.3.0-SNAPSHOT</cdmlib.version>
+    <cdm.vaadin.version>6.3.0-SNAPSHOT</cdm.vaadin.version>
   </properties>
   <repositories>
     <!-- the cdm internal repository -->
@@ -111,6 +111,8 @@
           
           
           
+          
+          
 <!--            <overlay>-->
 <!--              <groupId>eu.etaxonomy</groupId>-->
 <!--              <artifactId>cdm-vaadin</artifactId>-->
@@ -192,6 +194,8 @@
             </configuration>
             <goals>
               <goal>enforce</goal>
+            
+            
             
             
             
